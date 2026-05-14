@@ -50,14 +50,14 @@ grid on;
 
 subplot(2, 1, 2);
 plot(x_indices, u0, 'r-', 'LineWidth', 1.5);
-title('Normalizovaná Počiatočná Podmienka (u0)');
-xlabel('Čas (Dátové body)');
-ylabel('Normalizovaná Hodnota (0-1)');
+title('Normalized initial condition (u0)');
+xlabel('Time');
+ylabel('Normalized value (0-1)');
 ylim([-0.1 1.1]); 
 grid on;
 
 
-sgtitle('Príprava Dát Akcie PEP pre Difúzny Filter');
+sgtitle('Preparing PEP Action Data for Diffusion Filter');
 
 tau = 0.5;         
 t_steps = 3;   
@@ -82,9 +82,9 @@ plot(x_indices, u0, 'LineWidth', 1.5, 'DisplayName', 'PP');
 plot(x_indices, solution_nelinear(end, :), 'LineWidth', 1, 'DisplayName', [' ND (K=', num2str(K), ')']); 
 
 plot(x_indices, sma_solution, 'LineWidth', 1, 'DisplayName', ['SMA, W=', num2str(SMA_Window), ')']);
-xlabel('Dátový bod (Čas)');
-ylabel('Normalizovaná Hodnota');
-title(['Porovnanie Lineárnej a Nelineárnej Difúzie a SMA na Cenách PEP (T=', num2str(t_steps), ')']);
+xlabel('Time step');
+ylabel('Normalized price');
+%title(['Porovnanie Lineárnej a Nelineárnej Difúzie a SMA na Cenách PEP (T=', num2str(t_steps), ')']);
 
 legend('Location', 'best');
 grid on;
